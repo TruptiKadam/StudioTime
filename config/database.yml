@@ -1,0 +1,8 @@
+
+default: &defaults
+  adapter: postgres
+  encoding: utf8
+<%= "  pool: #{ENV['DATABASE_POOL'].to_i}" if ENV['DATABASE_POOL'] %>
+development:
+  <<: *defaults
+  url: postgres://postgres:postgres@localhost/studio_time_development
